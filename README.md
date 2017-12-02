@@ -35,6 +35,15 @@ sudo ldconfig
 ```
 Sometimes, when you have built the system and try to run a simple demo, the system crashed and says 'No mudule named baz_swig' or some other modules with the `_swig` suffix. On such occasion, just install `swig` first with `sudo apt install swig`, then rebuild and reinstall gr-baz.
 
+Also `libusb` is required to build gr-baz(`sudo apt install libusb-1.0-0-dev`).
+
+Other dependency: [`armadillo`](https://github.com/conradsnicta/armadillo-code), [`uhd`](https://github.com/EttusResearch/uhd)(Can be neglected, but will bring some performance gain).
+
+```powershell
+# install uhd through apt-get
+sudo apt-get install libuhd-dev libuhd003 uhd-host
+```
+
 # Build
 
 ```powershell
