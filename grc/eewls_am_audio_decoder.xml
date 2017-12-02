@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<block>
+  <name>am audio decoder</name>
+  <key>eewls_am_audio_decoder</key>
+  <category>[eewls]</category>
+  <import>import eewls</import>
+  <make>eewls.am_audio_decoder($sign_freq, $audio_freq, 
+                               $signal_low_pass_cutoff, $signal_low_pass_trans,
+                               $audio_low_pass_cutoff, $audio_low_pass_trans,
+                               $use_dc_blocker, $audio_gain)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <callback>set_taps($signal_low_pass_cutoff, $signal_low_pass_trans,
+                     $audio_low_pass_cutoff, $audio_low_pass_trans
+                     $use_dc_blocker, $audio_gain)</callback>
+  <param>
+    <name>signal sample rate</name>
+    <key>sign_freq</key>
+    <value>2000000</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>audio sample rate</name>
+    <key>audio_freq</key>
+    <value>48000</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>signal cutoff</name>
+    <key>signal_low_pass_cutoff</key>
+    <value>75000</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>signal transition width</name>
+    <key>signal_low_pass_trans</key>
+    <value>1000</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>audio low pass cutoff</name>
+    <key>audio_low_pass_cutoff</key>
+    <value>5000</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>audio low pass transition width</name>
+    <key>audio_low_pass_trans</key>
+    <value>10</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>use dc blocker</name>
+    <key>use_dc_blocker</key>
+    <value>1</value>
+    <type>enum</type>
+    <option>
+      <name>yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>no</name>
+      <key>0</key>
+    </option>
+  </param>
+  <param>
+    <name>audio gain(linear)</name>
+    <key>audio_gain</key>
+    <value>1</value>
+    <type>real</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

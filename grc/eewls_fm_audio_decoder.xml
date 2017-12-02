@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<block>
+  <name>fm audio decoder</name>
+  <key>eewls_fm_audio_decoder</key>
+  <category>[eewls]</category>
+  <import>import eewls</import>
+  <make>eewls.fm_audio_decoder($sign_freq, $audio_freq)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>sample rate</name>
+    <key>sign_freq</key>
+    <value>2000000</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>audio freq</name>
+    <key>audio_freq</key>
+    <value>48000</value>
+    <type>int</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

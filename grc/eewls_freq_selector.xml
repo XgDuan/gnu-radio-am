@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<block>
+  <name>freq selector</name>
+  <key>eewls_freq_selector</key>
+  <category>[eewls]</category>
+  <import>import eewls</import>
+  <make>eewls.freq_selector($base_freq, $samp_rate, $num_output, 
+                            $use_fixed_freq, $freq_1, $freq_2, $freq_3)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <callback>set_taps($base_freq, $samp_rate, $freq_1)</callback>
+  <param>
+    <name>base frequency</name>
+    <key>base_freq</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>sample rate</name>
+    <key>samp_rate</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>output number</name>
+    <key>num_output</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>use fixed frequency</name>
+    <key>use_fixed_freq</key>
+    <type>enum</type>
+    <option>
+      <name>yes</name>
+      <key>1</key>
+    </option>
+    <option>
+      <name>no</name>
+      <key>0</key>
+    </option>
+  </param>
+  <param>
+    <name>frequency 1</name>
+    <key>freq_1</key>
+    <value>-1</value>
+    <type>int</type>
+    <hide>#if str($use_fixed_freq).startwith('1') then 'none' else 'all'#</hide>
+  </param>
+  <param>
+    <name>frequency 2</name>
+    <key>freq_2</key>
+    <value>-1</value>
+    <type>int</type>
+    <hide>#'all'#</hide>
+  </param>
+  <param>
+    <name>frequency 3</name>
+    <key>freq_3</key>
+    <value>-1</value>
+    <type>int</type>
+    <hide>#'all'#</hide>
+  </param>
+  <!-- <check>$num_output  1</check> -->
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+    <nports>$num_output</nports>
+  </source>
+</block>
