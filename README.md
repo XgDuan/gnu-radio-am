@@ -1,4 +1,5 @@
 # Basic information
+> In the following part, we assume that you have a **Respberry pi** and a **rtl-sdr** hardware.
 
 The eewls(Electronic Engineering WireLess)project provides a SOC(System on Chip) code for am audio decoding as long as a fm dcoder and some other modules for you to build an am audio decoder or learn gnu-raido through our lucid code.
 
@@ -7,7 +8,7 @@ Also, all runnable codes are under `example/`. those `*.grc`s are grc files that
 # Dependency
 
 ## Ubuntu mate
-In the following part, we assume that you have a **Respberry pi** and a **rtl-sdr** hardware.
+
 
 > If you are gonna run the program on your linux pc version, please skip this part.
 However, if you are gonna run the program on Windows, we are not sure whether you will encounter any stranges problem due to gnuradio.
