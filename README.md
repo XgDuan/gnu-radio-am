@@ -1,6 +1,6 @@
 # Basic information
 
-The eewls(Electronic Engineering WireLess)project provides a SOC(System on Chip) for am audio decoding as long as a fm dcoder and some other modules for you to build an am audio decoder or learn gnu-raido through our lucid code.
+The eewls(Electronic Engineering WireLess)project provides a SOC(System on Chip) code for am audio decoding as long as a fm dcoder and some other modules for you to build an am audio decoder or learn gnu-raido through our lucid code.
 
 Also, all runnable codes are under `example/`. those `*.grc`s are grc files that show the system structure and those `*.py`s are python files that can be run directly with `python *.py`. More specifically, those end with `_0`  are mostly built upon raw gnuradio module and **gr-baz**. those ene with `_1` are built with `gr-eewls`, which package the swollen system into a single module.
 
@@ -42,6 +42,10 @@ Other dependency: [`armadillo`](https://github.com/conradsnicta/armadillo-code),
 ```powershell
 # install uhd through apt-get
 sudo apt-get install libuhd-dev libuhd003 uhd-host
+# install armadillo(we assume you are in the armadillo folder)
+cmake .
+make
+sudo make install
 ```
 
 # Build
