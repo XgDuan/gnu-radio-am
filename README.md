@@ -3,7 +3,7 @@
 
 The eewls(Electronic Engineering WireLess)project provides a SOC(System on Chip) code for am audio decoding as well as a fm dcoder and some other modules for you to build an am audio decoder or learn gnu-raido through our lucid code.
 
-Also, all runnable codes are under `example/`. those `*.grc`s are grc files that show the system structure and those `*.py`s are python files that can be run directly with `python *.py`. More specifically, those end with `_0`  are mostly built upon raw gnuradio module and **gr-baz**. those ene with `_1` are built with `gr-eewls`, which package the swollen system into a single module.
+Also, all runnable codes are under `example/`. Those `*.grc`s are grc files that show the system structure and those `*.py`s are python files that can be run directly with `python *.py`. More specifically, those end with `_0`  are mostly built upon raw gnuradio module and **gr-baz**. those ene with `_1` are built with `gr-eewls`, which package the swollen system into a single module.
 
 # Dependency
 
@@ -38,7 +38,7 @@ Sometimes, when you have built the system and try to run a simple demo, the syst
 
 Also `libusb` is required to build gr-baz(`sudo apt install libusb-1.0-0-dev`).
 
-Other dependency: [`armadillo`](https://github.com/conradsnicta/armadillo-code), [`uhd`](https://github.com/EttusResearch/uhd)(Can be neglected, but will bring some performance gain).
+Other dependency: [`armadillo`](https://github.com/conradsnicta/armadillo-code), [`uhd`](https://github.com/EttusResearch/uhd)(Can be neglected, for that after I installed them successfully, the gr-baz can not be compiled).
 
 ```powershell
 # install uhd through apt-get
